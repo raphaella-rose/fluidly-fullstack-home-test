@@ -1,14 +1,10 @@
+
 const assertEquals = (expect, actual) => {
-    if (expect != actual) {
-        if (typeof expect == "string") {
-            throw `Expected "${expect}" but found "${actual}"`
-        } else {
-            throw `Expected ${expect} but found ${actual}`
-        } 
-        
-    }
-    
-    
+    if (typeof expect == "string" && expect != actual) {
+        throw `Expected "${expect}" but found "${actual}"`
+    } else if (typeof expect == "number" && expect != actual) {
+        throw `Expected ${expect} but found ${actual}`
+    } 
 }
 
 module.exports = assertEquals
