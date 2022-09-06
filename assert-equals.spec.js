@@ -44,4 +44,10 @@ describe('assertEquals', () => {
       expect(() => assertEquals(3, 5)).toThrow('Expected 3 but found 5');
     })
   })
+
+  describe('when expected and actual are different numbers, 2 7', () => {
+    it('throws an error', () => {
+      expect(() => assertEquals(2, 7)).toThrow('Expected 2 but found 7');
+    })
+  })
 })
