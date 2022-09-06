@@ -1,17 +1,17 @@
-const assertEquals = (expect, actual) => {
+const assertEquals = (expect, actual, throwError) => {
     assertType(expect, actual)
 
     if (typeof expect == "object") {
         handleArray(expect, actual)
     }
-    
+
     isEqual(expect, actual)
 
 }
 
-const isEqual = (expect, actual) => {
+const isEqual = (expect, actual, throwError) => {
     if (expect !== actual) {
-        throwError(expect, actual)
+        throwError(expect, actual, throwError)
     }
 }
 
@@ -40,9 +40,10 @@ const assertType = (expect, actual) => {
     }
 }
 
-const throwError = (expect, actual) => {
+const throwError = (expect, actual, throwError) => {
+    console.log(throwError.string())
     if (typeof expect == "string") {
-        throw `Expected "${expect}" but found "${actual}"`
+        throw throwError.string();
     } else if (typeof expect == "number") {
         throw `Expected ${expect} but found ${actual}`
     } else {
