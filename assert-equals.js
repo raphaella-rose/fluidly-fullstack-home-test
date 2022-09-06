@@ -1,21 +1,24 @@
 const assertEquals = (expect, actual) => {
     assertType(expect, actual)
+
     if (Array.isArray(expect)) {
         assertArrayLength(expect, actual)
         assertArrayEquals(expect, actual)
     }
 
-    if (expect != actual) {
+    isEqual(expect, actual)
+
+}
+
+const isEqual = (expect, actual) => {
+    if (expect !== actual) {
         throwError(expect, actual)
-    } 
-    
+    }
 }
 
 const assertArrayEquals = (expect, actual) => {
     for (let i = 0; i < expect.length; i++) {
-        if (expect[i] != actual[i]) {
-            throwError(expect[i], actual[i])
-        } 
+        isEqual(expect[i], actual[i])
     }
 }
 
