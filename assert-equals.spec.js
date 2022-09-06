@@ -49,19 +49,21 @@ describe('assertEquals integration', () => {
     })
   })
 
-//   describe('when expected and actual are different numbers, 3 5', () => {
-//     it('throws an error', () => {
-//       const throwError = new ThrowError();
-//       expect(() => assertEquals(3, 5, throwError)).toThrow('Expected 3 but found 5');
-//     })
-//   })
+  describe('when expected and actual are different numbers, 3 5', () => {
+    it('throws an error', () => {
+      const throwError = new ThrowError();
+      const assertEquals = new AssertEquals(3, 5, throwError);
+      expect(() => assertEquals.isEqual()).toThrow('Expected 3 but found 5');
+    })
+  })
 
-//   describe('when expected and actual are different numbers, 2 7', () => {
-//     it('throws an error', () => {
-//       const throwError = new ThrowError();
-//       expect(() => assertEquals(2, 7, throwError)).toThrow('Expected 2 but found 7');
-//     })
-//   })
+  describe('when expected and actual are different numbers, 2 7', () => {
+    it('throws an error', () => {
+      const throwError = new ThrowError();
+      const assertEquals = new AssertEquals(2, 7, throwError);
+      expect(() => assertEquals.isEqual()).toThrow('Expected 2 but found 7');
+    })
+  })
 
 //   // testing for a number and a string
 //   describe('when expected and actual are different types, 1 "1"', () => {
