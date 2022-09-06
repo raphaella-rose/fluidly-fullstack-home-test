@@ -24,7 +24,7 @@ class AssertEquals {
         } else if (typeof this.expect == "number") {
             throw this.throwError.number(this.expect, this.actual);
         } else {
-            throw `Expected array length ${expect.length} but found ${actual.length}`
+            throw `Expected array length ${this.expect.length} but found ${this.actual.length}`
         }
     }
 }

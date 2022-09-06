@@ -90,27 +90,30 @@ describe('assertEquals integration', () => {
     })
   })
 
-//   // testing for two arrays of different lengths
-//   describe('when expected and actual are different length arrays, ["a", "b"] ["a", "b", "c"]', () => {
-//     it('throws an error', () => {
-//       const throwError = new ThrowError();
-//       expect(() => assertEquals(["a", "b"], ["a", "b", "c"], throwError)).toThrow('Expected array length 2 but found 3');
-//     })
-//   })
+  // testing for two arrays of different lengths
+  describe('when expected and actual are different length arrays, ["a", "b"] ["a", "b", "c"]', () => {
+    it('throws an error', () => {
+      const throwError = new ThrowError();
+      const assertEquals = new AssertEquals(["a", "b"], ["a", "b", "c"], throwError);
+      expect(() => assertEquals.isEqual()).toThrow('Expected array length 2 but found 3');
+    })
+  })
 
-//   describe('when expected and actual are different length arrays, [1, 2, 3] [1, 2, 3, 4]', () => {
-//     it('throws an error', () => {
-//       const throwError = new ThrowError();
-//       expect(() => assertEquals([1, 2, 3], [1, 2, 3, 4], throwError)).toThrow('Expected array length 3 but found 4');
-//     })
-//   })
+  describe('when expected and actual are different length arrays, [1, 2, 3] [1, 2, 3, 4]', () => {
+    it('throws an error', () => {
+      const throwError = new ThrowError();
+      const assertEquals = new AssertEquals([1, 2, 3], [1, 2, 3, 4], throwError);
+      expect(() => assertEquals.isEqual()).toThrow('Expected array length 3 but found 4');
+    })
+  })
 
-//   describe('when expected and actual are different length arrays, [1, 2, 3, 4, 5] [1, 2, 3, 4]', () => {
-//     it('throws an error', () => {
-//       const throwError = new ThrowError();
-//       expect(() => assertEquals([1, 2, 3, 4, 5], [1, 2, 3, 4], throwError)).toThrow('Expected array length 5 but found 4');
-//     })
-//   })
+  describe('when expected and actual are different length arrays, [1, 2, 3, 4, 5] [1, 2, 3, 4]', () => {
+    it('throws an error', () => {
+      const throwError = new ThrowError();
+      const assertEquals = new AssertEquals([1, 2, 3, 4, 5], [1, 2, 3, 4], throwError);
+      expect(() => assertEquals.isEqual()).toThrow('Expected array length 5 but found 4');
+    })
+  })
 
 //   // testing for two different arrays
 //   describe('when expected and actual are different arrays, ["a", "b"] ["a", "d"]', () => {
