@@ -74,19 +74,21 @@ describe('assertEquals integration', () => {
     })
   })
 
-//   describe('when expected and actual are different types, "2" 2', () => {
-//     it('throws an error', () => {
-//       const throwError = new ThrowError();
-//       expect(() => assertEquals('2', 2, throwError)).toThrow('Expected type string but found type number');
-//     })
-//   })
+  describe('when expected and actual are different types, "2" 2', () => {
+    it('throws an error', () => {
+      const throwError = new ThrowError();
+      const assertEquals = new AssertEquals('2', 2, throwError);
+      expect(() => assertEquals.isEqual()).toThrow('Expected type string but found type number');
+    })
+  })
 
-//   describe('when expected and actual are different types, 4 "4', () => {
-//     it('throws an error', () => {
-//       const throwError = new ThrowError();
-//       expect(() => assertEquals(4, "4", throwError)).toThrow('Expected type number but found type string');
-//     })
-//   })
+  describe('when expected and actual are different types, 4 "4', () => {
+    it('throws an error', () => {
+      const throwError = new ThrowError();
+      const assertEquals = new AssertEquals(4, "4", throwError);
+      expect(() => assertEquals.isEqual()).toThrow('Expected type number but found type string');
+    })
+  })
 
 //   // testing for two arrays of different lengths
 //   describe('when expected and actual are different length arrays, ["a", "b"] ["a", "b", "c"]', () => {
