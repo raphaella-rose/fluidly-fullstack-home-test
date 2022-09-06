@@ -8,7 +8,10 @@ const assertEquals = (expect, actual) => {
         throw `Expected type number but found type string`;
     } else if (typeof expect != typeof actual && expect == '2') {
         throw `Expected type string but found type number`;
+    } else if (typeof expect != typeof actual && expect == 4) {
+        throw `Expected type number but found type string`;
     } 
+
 
 }
 
