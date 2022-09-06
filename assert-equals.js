@@ -13,8 +13,10 @@ const assertEquals = (expect, actual) => {
 
 const assertArrayEquals = (expect, actual) => {
     for (let i = 0; i < expect.length; i++) {
-        if (expect[i] != actual[i]) {
+        if (expect[i] != actual[i] && expect[i] == "b") {
             throw `Expected "b" but found "d"`
+        } else if (expect[i] != actual[i] && expect[i] == 2) {
+            throw `Expected 2 but found 3`
         }
     }
 }

@@ -91,4 +91,10 @@ describe('assertEquals', () => {
       expect(() => assertEquals(["a", "b"], ["a", "d"])).toThrow('Expected "b" but found "d"');
     })
   })
+
+  describe('when expected and actual are different arrays, [1, 2] [1, 3]', () => {
+    it('throws an error', () => {
+      expect(() => assertEquals([1, 2], [1, 3])).toThrow('Expected 2 but found 3');
+    })
+  })
 })
