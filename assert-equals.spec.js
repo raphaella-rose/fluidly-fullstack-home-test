@@ -1,7 +1,7 @@
 const assertEquals = require('./assert-equals')
 
 describe('assertEquals', () => {
-  
+
   // testing for 2 strings
   describe('when expected and actual are the same string or number', () => {
     it('returns without throwing an error', () => {
@@ -66,7 +66,7 @@ describe('assertEquals', () => {
     })
   })
 
-  // testing for two arrays
+  // testing for two arrays of different lengths
   describe('when expected and actual are different length arrays, ["a", "b"] ["a", "b", "c"]', () => {
     it('throws an error', () => {
       expect(() => assertEquals(["a", "b"], ["a", "b", "c"])).toThrow('Expected array length 2 but found 3');
@@ -82,6 +82,13 @@ describe('assertEquals', () => {
   describe('when expected and actual are different length arrays, [1, 2, 3, 4, 5] [1, 2, 3, 4]', () => {
     it('throws an error', () => {
       expect(() => assertEquals([1, 2, 3, 4, 5], [1, 2, 3, 4])).toThrow('Expected array length 5 but found 4');
+    })
+  })
+
+  // testing for two different arrays
+  describe('when expected and actual are different arrays, ["a", "b"] ["a", "d"]', () => {
+    it('throws an error', () => {
+      expect(() => assertEquals(["a", "b"], ["a", "d"])).toThrow('Expected "b" but found "d"');
     })
   })
 })

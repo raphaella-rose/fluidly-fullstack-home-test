@@ -2,12 +2,21 @@ const assertEquals = (expect, actual) => {
     assertType(expect, actual)
     if (Array.isArray(expect)) {
         assertArrayLength(expect, actual)
+        assertArrayEquals(expect, actual)
     }
-    
+
     if (expect != actual) {
         throwError(expect, actual)
     } 
     
+}
+
+const assertArrayEquals = (expect, actual) => {
+    for (let i = 0; i < expect.length; i++) {
+        if (expect[i] != actual[i]) {
+            throw `Expected "b" but found "d"`
+        }
+    }
 }
 
 const assertArrayLength = (expect, actual) => {
