@@ -124,17 +124,19 @@ describe('assertEquals integration', () => {
     })
   })
 
-//   describe('when expected and actual are different arrays, [1, 2] [1, 3]', () => {
-//     it('throws an error', () => {
-//       const throwError = new ThrowError();
-//       expect(() => assertEquals([1, 2], [1, 3], throwError)).toThrow('Expected 2 but found 3');
-//     })
-//   })
+  describe('when expected and actual are different arrays, [1, 2] [1, 3]', () => {
+    it('throws an error', () => {
+      const throwError = new ThrowError();
+      const assertEquals = new AssertEquals([1, 2], [1, 3], throwError);
+      expect(() => assertEquals.isEqual()).toThrow('Expected 2 but found 3');
+    })
+  })
 
-//   describe('when expected and actual are different arrays, [1, 3, 3] [1, 2, 3]', () => {
-//     it('throws an error', () => {
-//       const throwError = new ThrowError();
-//       expect(() => assertEquals([1, 3, 3], [1, 2, 3], throwError)).toThrow('Expected 3 but found 2');
-//     })
-//   })
+  describe('when expected and actual are different arrays, [1, 3, 3] [1, 2, 3]', () => {
+    it('throws an error', () => {
+      const throwError = new ThrowError();
+      const assertEquals = new AssertEquals([1, 3, 3], [1, 2, 3], throwError);
+      expect(() => assertEquals.isEqual()).toThrow('Expected 3 but found 2');
+    })
+  })
 })

@@ -38,7 +38,6 @@ class AssertEquals {
     }
 
     assertArray() {
-        console.log("here", this.expect)
         for (let i = 0; i < this.expect.length; i++) {
             this.assertCharacter(this.expect[i], this.actual[i])
         }
