@@ -33,9 +33,18 @@ describe(AssertEquals, () => {
     // testing for a number and a string
     describe('when expected and actual are different types, 1 "1"', () => {
         it('throws an error', () => {
-            const throwErrorDouble = { type: () => ('Expected type number but found type string') }
+            const throwErrorDouble = { type: () => ('Expected type number but found type string') };
             const assertEquals = new AssertEquals(1, '1', throwErrorDouble);
             expect(() => assertEquals.isEqual()).toThrow('Expected type number but found type string');
         })
       })
+
+     // testing for two arrays of different lengths
+    describe('when expected and actual are different length arrays, ["a", "b"] ["a", "b", "c"]', () => {
+        it('throws an error', () => {
+            const throwErrorDouble = { arrayLength: () => ('Expected array length 2 but found 3') };
+            const assertEquals = new AssertEquals(["a", "b"], ["a", "b", "c"], throwErrorDouble);
+            expect(() => assertEquals.isEqual()).toThrow('Expected array length 2 but found 3');
+    })
+  })
 })
