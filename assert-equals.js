@@ -3,6 +3,11 @@ const assertEquals = (expect, actual) => {
     if (expect != actual) {
         throwError(expect, actual)
     } 
+    if (Array.isArray(expect)) {
+        if (expect.length != actual.length) {
+           throw 'Expected array length 2 but found 3'
+        }
+    }
 }
 
 const checkType = (expect, actual) => {
@@ -18,6 +23,7 @@ const throwError = (expect, actual) => {
         throw `Expected ${expect} but found ${actual}`
     } 
 }
+
 
 
 

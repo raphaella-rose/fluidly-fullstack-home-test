@@ -64,4 +64,11 @@ describe('assertEquals', () => {
       expect(() => assertEquals(4, "4")).toThrow('Expected type number but found type string');
     })
   })
+
+  // testing for two arrays
+  describe('when expected and actual are different length arrays, ["a", "b"] ["a", "b", "c"]', () => {
+    it('throws an error', () => {
+      expect(() => assertEquals(["a", "b"], ["a", "b", "c"])).toThrow('Expected array length 2 but found 3');
+    })
+  })
 })
