@@ -14,7 +14,7 @@ class AssertEquals {
 
     assertType() {
         if (typeof this.expect != typeof this.actual) {
-            throw `Expected type ${typeof this.expect} but found type ${typeof this.actual}`;
+            throw this.throwError.type(this.expect, this.actual);
         }
     }
 
