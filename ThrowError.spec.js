@@ -38,4 +38,10 @@ describe(ThrowError, () => {
         const throwNumber = throwError.number(7, 9);
         expect(throwNumber).toBe('Expected 7 but found 9')
     })
+
+    it('throws error for type mismatch, "1" 1', () => {
+        const throwError = new ThrowError();
+        const throwType = throwError.type("1", 1);
+        expect(throwType).toBe('Expected type string but found type number')
+    })
 })
