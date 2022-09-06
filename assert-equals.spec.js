@@ -57,4 +57,10 @@ describe('assertEquals', () => {
       expect(() => assertEquals(1, '1')).toThrow('Expected type number but found type string');
     })
   })
+
+  describe('when expected and actual are different types, "2" 2', () => {
+    it('throws an error', () => {
+      expect(() => assertEquals('2', 2)).toThrow('Expected type string but found type number');
+    })
+  })
 })
