@@ -56,4 +56,22 @@ describe(ThrowError, () => {
         const throwType = throwError.type(4, "3");
         expect(throwType).toBe('Expected type number but found type string')
     })
+
+    it('throws error for array length mismatch, [1, 2] [1, 2, 3]', () => {
+        const throwError = new ThrowError();
+        const throwArrayLength= throwError.arrayLength([1, 2], [1, 2, 3]);
+        expect(throwArrayLength).toBe('Expected array length 2 but found 3')
+    })
+
+    it('throws error for array length mismatch, [1, 2, 3, 4] [1, 2, 3]', () => {
+        const throwError = new ThrowError();
+        const throwArrayLength= throwError.arrayLength([1, 2, 3, 4], [1, 2, 3]);
+        expect(throwArrayLength).toBe('Expected array length 4 but found 3')
+    })
+
+    it('throws error for array length mismatch, [1] [1, 2]', () => {
+        const throwError = new ThrowError();
+        const throwArrayLength= throwError.arrayLength([1], [1, 2]);
+        expect(throwArrayLength).toBe('Expected array length 1 but found 2')
+    })
 })
