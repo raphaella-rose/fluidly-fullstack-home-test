@@ -1,6 +1,7 @@
 const assertEquals = require('./assert-equals')
 
 describe('assertEquals', () => {
+  
   // testing for 2 strings
   describe('when expected and actual are the same string or number', () => {
     it('returns without throwing an error', () => {
