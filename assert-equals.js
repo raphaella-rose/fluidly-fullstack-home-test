@@ -1,11 +1,10 @@
 const assertEquals = (expect, actual) => {
     assertType(expect, actual)
 
-    if (Array.isArray(expect)) {
-        assertArrayLength(expect, actual)
-        assertArrayEquals(expect, actual)
+    if (typeof expect == "object") {
+        handleArray(expect, actual)
     }
-
+    
     isEqual(expect, actual)
 
 }
@@ -14,6 +13,13 @@ const isEqual = (expect, actual) => {
     if (expect !== actual) {
         throwError(expect, actual)
     }
+}
+
+const handleArray = (expect, actual) => {
+ 
+    assertArrayLength(expect, actual)
+    assertArrayEquals(expect, actual)
+    
 }
 
 const assertArrayEquals = (expect, actual) => {
