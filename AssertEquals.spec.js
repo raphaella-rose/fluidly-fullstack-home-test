@@ -47,4 +47,13 @@ describe(AssertEquals, () => {
             expect(() => assertEquals.isEqual()).toThrow('Expected array length 2 but found 3');
     })
   })
+
+    // testing for two different arrays
+    describe('when expected and actual are different arrays, ["a", "b"] ["a", "d"]', () => {
+        it('throws an error', () => {
+        const throwErrorDouble = { string: () => ('Expected "b" but found "d"') };
+          const assertEquals = new AssertEquals(["a", "b"], ["a", "d"], throwErrorDouble);
+          expect(() => assertEquals.isEqual()).toThrow('Expected "b" but found "d"');
+        })
+      })
 })
