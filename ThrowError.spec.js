@@ -13,4 +13,11 @@ describe(ThrowError, () => {
         expect(throwString).toBe('Expected "dog" but found "dogs"');
        
     })
+
+    it('throws error for string mismatch, "chocolate" "sweets"', () => {
+        const throwError = new ThrowError();
+        const throwString = throwError.string('chocolate', 'sweets');
+        expect(throwString).toBe('Expected "chocolate" but found "sweets"');
+       
+    })
 })
