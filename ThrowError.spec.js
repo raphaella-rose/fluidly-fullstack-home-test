@@ -20,4 +20,22 @@ describe(ThrowError, () => {
         expect(throwString).toBe('Expected "chocolate" but found "sweets"');
        
     })
+
+    it('throws error for number mismatch, 1 2', () => {
+        const throwError = new ThrowError();
+        const throwNumber = throwError.number(1, 2);
+        expect(throwNumber).toBe('Expected 1 but found 2')
+    })
+
+    it('throws error for number mismatch, 3 5', () => {
+        const throwError = new ThrowError();
+        const throwNumber = throwError.number(3, 5);
+        expect(throwNumber).toBe('Expected 3 but found 5')
+    })
+
+    it('throws error for number mismatch, 7 9', () => {
+        const throwError = new ThrowError();
+        const throwNumber = throwError.number(7, 9);
+        expect(throwNumber).toBe('Expected 7 but found 9')
+    })
 })

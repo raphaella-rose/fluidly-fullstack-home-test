@@ -40,13 +40,14 @@ describe('assertEquals integration', () => {
     })
   })
 
-//   // testing for two numbers
-//   describe('when expected and actual are different numbers, 1 2', () => {
-//     it('throws an error', () => {
-//       const throwError = new ThrowError();
-//       expect(() => assertEquals(1, 2, throwError)).toThrow('Expected 1 but found 2');
-//     })
-//   })
+  // testing for two numbers
+  describe('when expected and actual are different numbers, 1 2', () => {
+    it('throws an error', () => {
+      const throwError = new ThrowError();
+      const assertEquals = new AssertEquals(1, 2, throwError);
+      expect(() => assertEquals.isEqual()).toThrow('Expected 1 but found 2');
+    })
+  })
 
 //   describe('when expected and actual are different numbers, 3 5', () => {
 //     it('throws an error', () => {

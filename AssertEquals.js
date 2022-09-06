@@ -12,11 +12,10 @@ class AssertEquals {
     }
 
     handleError() {
-
         if (typeof this.expect == "string") {
            throw this.throwError.string(this.expect, this.actual);
-        } else if (typeof expect == "number") {
-            throw `Expected ${expect} but found ${actual}`
+        } else if (typeof this.expect == "number") {
+            throw this.throwError.number(this.expect, this.actual);
         } else {
             throw `Expected array length ${expect.length} but found ${actual.length}`
         }
