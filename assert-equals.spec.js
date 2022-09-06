@@ -19,4 +19,10 @@ describe('assertEquals', () => {
       expect(() => assertEquals('dog', 'dogs')).toThrow('Expected "dog" but found "dogs"');
     })
   })
+
+  describe('when expected and actual are different strings "chocolate" "sweets"', () => {
+    it('throws an error', () => {
+      expect(() => assertEquals('chocolate', 'sweets')).toThrow('Expected "chocolate" but found "sweets"');
+    })
+  })
 })
