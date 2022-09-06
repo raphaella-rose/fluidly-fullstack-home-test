@@ -71,4 +71,10 @@ describe('assertEquals', () => {
       expect(() => assertEquals(["a", "b"], ["a", "b", "c"])).toThrow('Expected array length 2 but found 3');
     })
   })
+
+  describe('when expected and actual are different length arrays, [1, 2, 3] [1, 2, 3, 4]', () => {
+    it('throws an error', () => {
+      expect(() => assertEquals([1, 2, 3], [1, 2, 3, 4])).toThrow('Expected array length 3 but found 4');
+    })
+  })
 })
