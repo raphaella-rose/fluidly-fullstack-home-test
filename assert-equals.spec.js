@@ -5,9 +5,12 @@ describe('assertEquals', () => {
     it('returns without throwing an error', () => {
       expect(() => assertEquals('abc', 'abc')).not.toThrow()
     })
+
   })
 
-  describe('when expected and actual are different strings', () => {
-    it.todo('throws an error')
+  describe('when expected and actual are different strings "abcef" "abc"', () => {
+    it('throws an error', () => {
+      expect(() => assertEquals('abcef', 'abc')).toThrow('Expected "abcef" but found "abc"');
+    })
   })
 })
