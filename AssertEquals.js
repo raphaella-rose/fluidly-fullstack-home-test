@@ -6,8 +6,15 @@ class AssertEquals {
     }
 
     isEqual() {
+        this.assertType();
         if (this.expect !== this.actual) {
             this.handleError()
+        }
+    }
+
+    assertType() {
+        if (typeof this.expect != typeof this.actual) {
+            throw `Expected type ${typeof this.expect} but found type ${typeof this.actual}`;
         }
     }
 
