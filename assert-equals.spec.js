@@ -8,19 +8,19 @@ describe('assertEquals', () => {
     })
   })
 
-  describe('when expected and actual are different strings "abcef" "abc"', () => {
+  describe('when expected and actual are different strings, "abcef" "abc"', () => {
     it('throws an error', () => {
       expect(() => assertEquals('abcef', 'abc')).toThrow('Expected "abcef" but found "abc"');
     })
   })
 
-  describe('when expected and actual are different strings "dog" "dogs"', () => {
+  describe('when expected and actual are different strings, "dog" "dogs"', () => {
     it('throws an error', () => {
       expect(() => assertEquals('dog', 'dogs')).toThrow('Expected "dog" but found "dogs"');
     })
   })
 
-  describe('when expected and actual are different strings "chocolate" "sweets"', () => {
+  describe('when expected and actual are different strings, "chocolate" "sweets"', () => {
     it('throws an error', () => {
       expect(() => assertEquals('chocolate', 'sweets')).toThrow('Expected "chocolate" but found "sweets"');
     })
@@ -33,9 +33,15 @@ describe('assertEquals', () => {
     })
   })
 
-  describe('when expected and actual are different numbers 1 2', () => {
+  describe('when expected and actual are different numbers, 1 2', () => {
     it('throws an error', () => {
       expect(() => assertEquals(1, 2)).toThrow('Expected 1 but found 2');
+    })
+  })
+
+  describe('when expected and actual are different numbers, 3 5', () => {
+    it('throws an error', () => {
+      expect(() => assertEquals(3, 5)).toThrow('Expected 3 but found 5');
     })
   })
 })
