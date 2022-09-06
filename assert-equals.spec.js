@@ -115,13 +115,14 @@ describe('assertEquals integration', () => {
     })
   })
 
-//   // testing for two different arrays
-//   describe('when expected and actual are different arrays, ["a", "b"] ["a", "d"]', () => {
-//     it('throws an error', () => {
-//       const throwError = new ThrowError();
-//       expect(() => assertEquals(["a", "b"], ["a", "d"], throwError)).toThrow('Expected "b" but found "d"');
-//     })
-//   })
+  // testing for two different arrays
+  describe('when expected and actual are different arrays, ["a", "b"] ["a", "d"]', () => {
+    it('throws an error', () => {
+      const throwError = new ThrowError();
+      const assertEquals = new AssertEquals(["a", "b"], ["a", "d"], throwError);
+      expect(() => assertEquals.isEqual()).toThrow('Expected "b" but found "d"');
+    })
+  })
 
 //   describe('when expected and actual are different arrays, [1, 2] [1, 3]', () => {
 //     it('throws an error', () => {

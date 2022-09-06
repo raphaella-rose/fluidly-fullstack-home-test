@@ -7,9 +7,11 @@ class AssertEquals {
 
     isEqual() {
         this.assertType();
-        if (this.expect !== this.actual) {
-            this.handleError()
+        if (typeof this.expect == "object") {
+            this.handleArray()
         }
+
+        this.assertCharacter();
     }
 
     assertType() {
@@ -18,13 +20,37 @@ class AssertEquals {
         }
     }
 
-    handleError() {
-        if (typeof this.expect == "string") {
-           throw this.throwError.string(this.expect, this.actual);
-        } else if (typeof this.expect == "number") {
-            throw this.throwError.number(this.expect, this.actual);
+    assertCharacter(expect = this.expect, actual = this.actual) {
+        if (expect !== actual) {
+            this.handleError(expect, actual)
+        }
+    }
+
+    handleArray() {
+        this.assertArrayLength();
+        this.assertArray();
+    }
+
+    assertArrayLength() {
+        if (this.expect.length != this.actual.length) {
+            this.handleError(this.expect, this.actual)
+         } 
+    }
+
+    assertArray() {
+        console.log("here", this.expect)
+        for (let i = 0; i < this.expect.length; i++) {
+            this.assertCharacter(this.expect[i], this.actual[i])
+        }
+    }
+
+    handleError(expect = this.expect, actual = this.actual) {
+        if (typeof expect == "string") {
+           throw this.throwError.string(expect, actual);
+        } else if (typeof expect == "number") {
+            throw this.throwError.number(expect, actual);
         } else {
-            throw this.throwError.arrayLength(this.expect, this.actual);
+            throw this.throwError.arrayLength(expect, actual);
         }
     }
 }
