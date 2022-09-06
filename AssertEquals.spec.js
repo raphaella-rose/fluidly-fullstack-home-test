@@ -20,4 +20,13 @@ describe(AssertEquals, () => {
             expect(() => assertEquals.isEqual()).toThrow('Expected "abcef" but found "abc"');
     })
   })
+
+   // testing for two numbers
+   describe('when expected and actual are different numbers, 1 2', () => {
+        it('throws an error', () => {
+            const throwErrorDouble = { number: () => ('Expected 1 but found 2') }
+            const assertEquals = new AssertEquals(1, 2, throwErrorDouble);
+            expect(() => assertEquals.isEqual()).toThrow('Expected 1 but found 2');
+    })
+  })
 })
