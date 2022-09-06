@@ -1,4 +1,3 @@
-const assertEquals = require('./assert-equals')
 const AssertEquals = require('./AssertEquals')
 const ThrowError = require('./ThrowError')
 
