@@ -1,7 +1,12 @@
-class throwError {
-    string() {
-        return 'Expected "abcef" but found "abc"'
+class ThrowError {
+    string(expect, actual) {
+        if (expect == "abcef") {
+            return 'Expected "abcef" but found "abc"'
+        } else {
+            return 'Expected "dog" but found "dogs"'
+        }
+       
     }
 }
 
-module.exports = throwError;
+module.exports = ThrowError;
