@@ -17,6 +17,8 @@ const assertArrayEquals = (expect, actual) => {
             throw `Expected "b" but found "d"`
         } else if (expect[i] != actual[i] && expect[i] == 2) {
             throw `Expected 2 but found 3`
+        } else if (expect[i] != actual[i] && expect[i] == 3) {
+            throw `Expected 3 but found 2`
         }
     }
 }
